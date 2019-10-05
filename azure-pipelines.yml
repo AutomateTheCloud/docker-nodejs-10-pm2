@@ -16,6 +16,9 @@ variables:
   - name: docker.image.tag
     value: $(Build.BuildNumber)
 
+  - name: init.azure_devops
+    value: yes
+
 ##-------------------------------------------------------------------------------------------------
 jobs:
 
