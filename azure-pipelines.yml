@@ -70,6 +70,9 @@ jobs:
   - script: docker push $(docker.registry_url)/$(docker.organization)/$(docker.image.name):$(docker.image.tag)
     displayName: 'Docker - Push (Tag - Version)'
 
+  - script: docker tag $(docker.registry_url)/$(docker.organization)/$(docker.image.name):$(docker.image.tag) $(docker.registry_url)/$(docker.organization)/$(docker.image.name):latest
+    displayName: 'Docker - Tag Latest'
+
   - script: cid.docker.generate_info_file -I $(workspace.directory.artifacts)/docker.info
     displayName: 'Docker - Generate Info File'
 
